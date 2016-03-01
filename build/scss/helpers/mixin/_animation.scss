@@ -1,0 +1,14 @@
+
+//animation
+//alternate
+@mixin animation($name, $duration: 1s, $timing-function: 'ease', $delay: 0, $iteration-count: 1, $direction: normal, $play-state: 'running', $fill-mode:none){
+    animation: $name;
+    animation-duration: $duration;
+    animation-timing-function: $timing-function;
+    animation-delay: $delay;
+    animation-iteration-count: $iteration-count;
+    animation-direction: $direction;
+    animation-play-state: $play-state;
+    animation-fill-mode: $fill-mode;
+    
+}
