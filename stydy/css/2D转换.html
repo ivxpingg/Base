@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<!---->
+<html land="zh_CN">
+<head>
+    <meta charset="utf-8">
+    <!--确保-->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<!--为了确保适当的绘制和触屏缩放，需要在 <head> 之中添加 viewport 元数据标签。
+       添加 user-scalable=no 可以禁用其缩放（zooming）功能
+	 -->
+	<meta name="viewport" content="width=device-width, initial-scale=1">   
+	<!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ --> 
+	<title>2D转换</title>
+	<!-- Bootstrap -->
+    <link href="../bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    
+    <style>
+        html {width:100%; height:100%; margin:0; padding:0;box-sizing: border-box;}
+        body{
+            display:block;
+            box-sizing: border-box;
+            height:100%;
+            margin:100px;
+            border:1px solid #000;             
+            background-color:gray;           
+        }
+       .com{
+          width:100px;
+          height:100px;
+          background-color: #fff;
+          
+          text-align:center;
+      }
+       .rotate { 
+          transform: rotate(45deg);
+       }
+
+        .translate{
+          /*transform: translate(50px,100px);*/
+        }
+
+        .scale{
+          transform:scale(1.2,1.2) ;
+        }
+        .skew{
+          transform:skew(30deg,10deg) ;
+        }
+
+    </style>
+
+</head>
+<body>
+     
+    <div class="com rotate">2d旋转</div>
+    <div class="com translate">元素从左侧移动 50 像素，从顶端移动 100 像素</div>
+
+    <div class="com scale">把宽度转换为原始尺寸的 2 倍，把高度转换为原始高度的 1.5 倍</div>
+
+    <div class="com skew">围绕 X 轴把元素翻转 30 度，围绕 Y 轴翻转 10 度</div>
+
+
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="../bower_components/jquery/dist/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="../bower_components/bootstrap-sass/assets/javascripts/bootstrap.min.js"></script>
+</body>
+</html>

@@ -30,6 +30,7 @@
     "jquery": "^1.12.1",
     "iCheck": "^1.0.2",
     "bootstrap-sass": "^3.3.6",
-    "zepto": "^1.1.6"
+    "zepto": "^1.1.6",
+    "SUI-Mobile": "https://github.com/sdc-alibaba/SUI-Mobile.git"
   }
 }

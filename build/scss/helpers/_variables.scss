@@ -1,0 +1,55 @@
+
+
+
+//color
+$color-stack: 
+    (group: gray,        id: normal,        color: #424446 ),  //字体  灰色
+    (group: gray,        id: gray-58,        color: #585858 ),  //字体    
+    (group: gray,        id: gray-60,        color: #606366 ),  //字体
+    (group: gray,        id: gray-77,        color: #777777 ),  //字体
+    (group: gray,        id: gray-88,        color: #888888 ),  //字体
+    (group: gray,        id: gray-89,        color: #898e91 ),  //字体    
+    (group: gray,        id: gray-c6,        color: #c6c6c6 ),  //字体
+    (group: gray,        id: gray-d9,   color: #d9d9d9 ),  //border
+    (group: gray,        id: gray-e5,   color: #e5e5e5 ),  //border
+    (group: gray,        id: gray-bg,       color: #efefef ),  //背景  
+    (group: gray,        id: gray-bg-light,       color: #f7fdff ),  //背景     
+      
+    (group: blue,        id: normal,        color: #0067bf ),  //蓝色
+    (group: blue,        id: blue-0b,    color: #0b95d6 ),
+    (group: blue,        id: blue-light,    color: #16a7e6 ),
+    (group: blue,        id: blue-lighter,  color: #57a0f2 ),     
+
+    (group: cyan,        id: normal,        color: #00b4bf ),  //青色
+    (group: cyan,        id: cyan-light,    color: #0095a9 ),
+    (group: cyan,        id: cyan-lighter,  color: #00b4bf ),
+    (group: cyan,        id: cyan-lightest, color: #05aba9 ),    
+    
+    (group: red,         id: normal,        color: #ff2d2d ),  //红色
+    (group: red,         id: red-light,     color: #f35050 ), 
+
+    (group: orange,      id: normal,        color: #feb100 ),  //橙色
+    (group: orange,      id: orange-red,    color: #ff7c48 ),
+    (group: orange,      id: orange-red-light,    color: #ff8841 ),      
+
+    (group: yellow,      id: normal,        color: #fca54b ),  //黄色   
+
+    (group: green,       id: normal,        color: #4cbb38 ),  //绿色    
+    (group: green,       id: green-cyan,    color: #19d5a8 ),  //绿色偏蓝
+    (group: green,       id: green,        color: #10b518 ),
+    
+
+    (group: violet,      id: normal,        color: #cd5cf3 );  //紫色
+
+
+
+ // font 字体
+
+ $font-stack:
+     (group: msyahei,        id: normal,        font:('Microsoft YaHei',san-serif),        weight: 500,        style: normal),
+     (group: msyahei,        id: bold,          font:('Microsoft YaHei',san-serif),        weight: 700,        style: normal);
+
+
+//基元素字体 $calculate-font-size与$base-font-size 变量必须相等
+$calculate-font-size: 20;
+$base-font-size: 20px;

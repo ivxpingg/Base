@@ -1,0 +1,11 @@
+//字体
+//@param group id
+@mixin font($group, $id: normal){
+	@each $font in $font-stack{
+		@if($group == map-get($font, group) and $id == map-get($font, id)){
+			font-family: map-get($font, font);
+			font-weight: map-get($font, weight);
+			font-style: map-get($font, style);
+		}
+	}
+}

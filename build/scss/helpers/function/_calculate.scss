@@ -1,0 +1,6 @@
+
+// px单位转化为 rem 
+
+@function rem($value){
+   @return $value / $calculate-font-size + rem;
+}

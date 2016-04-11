@@ -10,12 +10,12 @@ module.exports = function(grunt){
 	      // If any .less file changes in directory "build/less/" run the "less"-task.
 	      // files: ["build/less/*.less", "build/less/skins/*.less", "dist/js/app.js"],
 	      files: ["build/scss/*.scss", "build/scss/skins/*.scss", "dist/js/app.js"],
-	      tasks: ["sass", "uglify"]
+	      tasks: ["sass"]
 	    },
 
         // SASS compiler
 	    sass: {
-	      development: {
+	      bootstrap: {
 	        options: {
 	          style: 'expanded'
 	        },
@@ -23,13 +23,14 @@ module.exports = function(grunt){
 	          'bootstrap/css/bootstrap.css': 'bootstrap/scss/bootstrap.scss'
 	        }
 	      },
-	      production: {
-	        options: {
-	          style: 'compressed'
-	        },
-	        files: {
-	          'bootstrap/css/bootstrap.min.css': 'bootstrap/scss/bootstrap.scss'
-	        }
+
+	      bigBox: {
+	      	 options: {
+	      	 	style: 'expanded'
+	      	 },
+	      	 files: [
+                {}
+	      	 ]
 	      }
 	    },
 
@@ -46,7 +47,9 @@ module.exports = function(grunt){
 
 
 	    //合并文件
-	    concat: {},
+	    concat: {
+
+	    },
 
 	    //压缩文件
 	    uglify: {
@@ -72,5 +75,5 @@ module.exports = function(grunt){
     grunt.loadNpmTasks('grunt-autoprefixer');     //css自动添加浏览器前缀(后处理程序)
 
     //
-    grunt.registerTask('default',['autoprefixer']);    
+    grunt.registerTask('default',['watch']);    
 };
