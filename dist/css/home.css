@@ -1,0 +1,117 @@
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.carousel-inner > .item > img {
+  width: 100%;
+}
+
+.menu:before, .menu:after {
+  content: " ";
+  display: table;
+}
+.menu:after {
+  clear: both;
+}
+.menu > li {
+  float: left;
+  width: 25%;
+}
+.menu > li > a {
+  display: block;
+  padding: 1.5rem 0;
+  width: 100%;
+  font-size: 1.3rem;
+  color: #494949;
+  text-align: center;
+  text-decoration: none;
+  border-bottom: 5px solid #f2f2f2;
+}
+.menu > li > a:hover, .menu > li > a:focus {
+  color: #3c3c3c;
+  text-decoration: none;
+}
+.menu > li > a:hover {
+  background-color: #f2f2f2;
+}
+.menu > li > a > img {
+  display: block;
+  margin: 0 auto 6px;
+  width: 50%;
+}
+
+.download {
+  display: block;
+  margin: 0 15px;
+  padding: 10px 0;
+}
+.download > img {
+  width: 100%;
+}
+
+.list:before, .list:after {
+  content: " ";
+  display: table;
+}
+.list:after {
+  clear: both;
+}
+.list > li {
+  float: left;
+  width: 50%;
+  height: 90px;
+  border-top: 1px solid #eaeaea;
+}
+.list > li > a {
+  position: relative;
+  display: block;
+  padding-left: 10px;
+  height: 100%;
+}
+.list > li > a > .title {
+  padding-top: 9px;
+  font-size: 1.55rem;
+}
+.list > li > a > .sub-title {
+  font-size: 1.4rem;
+  color: #999999;
+}
+.list > li > a > img {
+  position: absolute;
+  display: block;
+  top: 24%;
+  right: 15px;
+  height: 60%;
+}
+.list > li > a:hover {
+  background-color: #f2f2f2;
+  text-decoration: none;
+}
+.list > li.double-height {
+  height: 180px;
+}
+.list > li.left {
+  border-right: 1px solid #eaeaea;
+}
+
+.green {
+  color: #51a01a;
+}
+
+.olive {
+  color: #098d84;
+}
+
+.violet {
+  color: #721aaa;
+}
+
+.cyan {
+  color: #4cc2ff;
+}
+
+.orange {
+  color: #f95f39;
+}
