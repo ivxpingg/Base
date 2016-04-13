@@ -46,11 +46,39 @@ module.exports = function(grunt){
 
 
 	    //合并文件
-	    concat: {},
+	    concat: {	   
+	    	bootstraps: { 
+
+	    		options: {
+	    			banner: '/* bootstrap */',
+	    			separator: ';',
+	    			sourceMap: true
+	    		},
+    			src: ['node_modules/bootstrap-sass/assets/javascripts/bootstrap/affix.js',
+    			      'node_modules/bootstrap-sass/assets/javascripts/bootstrap/alert.js',
+    			      'node_modules/bootstrap-sass/assets/javascripts/bootstrap/button.js',
+    			      'node_modules/bootstrap-sass/assets/javascripts/bootstrap/carousel.js',
+    			      'node_modules/bootstrap-sass/assets/javascripts/bootstrap/collapse.js',
+    			      'node_modules/bootstrap-sass/assets/javascripts/bootstrap/dropdown.js',
+    			      'node_modules/bootstrap-sass/assets/javascripts/bootstrap/modal.js',
+    			      'node_modules/bootstrap-sass/assets/javascripts/bootstrap/popover.js',
+    			      'node_modules/bootstrap-sass/assets/javascripts/bootstrap/scrollspy.js',
+    			      'node_modules/bootstrap-sass/assets/javascripts/bootstrap/tab.js',
+    			      'node_modules/bootstrap-sass/assets/javascripts/bootstrap/tooltip.js',
+    			      'node_modules/bootstrap-sass/assets/javascripts/bootstrap/transition.js'],
+    			dest: 'bootstrap/js/bootstrap.js'
+	    	}
+	    },
 
 	    //压缩文件
 	    uglify: {
-	    	options: {}
+	    	bootstrap: {
+	    		options: {
+	    			sourceMap: true
+	    		},
+	    		src: 'bootstrap/js/bootstrap.js',
+	    		dest: 'bootstrap/js/bootstrap.min.js'
+	    	}
 	    },
 
 	    autoprefixer: {
@@ -72,5 +100,6 @@ module.exports = function(grunt){
     grunt.loadNpmTasks('grunt-autoprefixer');     //css自动添加浏览器前缀(后处理程序)
 
     //
-    grunt.registerTask('default',['autoprefixer']);    
+    grunt.registerTask('default',['autoprefixer']); 
+    grunt.registerTask('bootstrap', ['concat','uglify']);
 };
