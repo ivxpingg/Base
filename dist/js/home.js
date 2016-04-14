@@ -42,14 +42,21 @@ function codeValidate(){
 function timing (seconds){
 
     var dom = document.getElementById("gcode");
-    dom.innerHTML = seconds + 's';
+    var slass = dom.className;
+    
+    if(dom.className.indexOf('active') > 0) return;
+
+    dom.className = slass + " active";
+
+    dom.innerHTML = seconds + '秒后重新获取';
     var t = setInterval(function(){       
         if(seconds > 0){
        	    --seconds;
-             dom.innerHTML = seconds + 's';            
+             dom.innerHTML = seconds + '秒后重新获取';            
         }
         else {       	    
        	    dom.innerHTML = '获取验证码';
+       	    dom.className = dom.className.replace('active', '');
        	    clearInterval(t);
        	}
    }, 1000);
