@@ -1,3 +1,7 @@
+* {
+  font-family: "Microsoft yahei";
+}
+
 ul {
   list-style-type: none;
   margin: 0;
@@ -114,4 +118,178 @@ ul {
 
 .orange {
   color: #f95f39;
+}
+
+.red {
+  color: #a0141a;
+}
+
+.l-box {
+  position: relative;
+  margin-top: 35px;
+  padding: 25px 15px 15px;
+  border: 1px solid #cfcfcf;
+  background-color: #efefef;
+  border-radius: 8px;
+}
+.l-box > .b-title {
+  position: relative;
+  margin: -3.85rem auto 1rem;
+  padding: 0.7rem 0;
+  width: 75%;
+  font-size: 1.3rem;
+  text-align: center;
+  color: #fff;
+  background-color: #a0141a;
+  border: 1px solid #a0141a;
+  border-radius: 8px;
+}
+.l-box > .b-title > img {
+  position: absolute;
+  top: -1.275rem;
+  right: -1.3rem;
+  width: 2.55rem;
+  height: 2.6rem;
+}
+.l-box > .txt {
+  font-size: 1.3rem;
+  color: #000;
+  text-align: left;
+  line-height: 2rem;
+}
+.l-box > .line {
+  margin-top: 20px;
+  width: 100%;
+  height: 1px;
+  background-color: #a0141a;
+}
+.l-box > .line-title {
+  margin: -10px auto 0;
+  width: 11.7rem;
+  font-size: 1.3rem;
+  color: #a0141a;
+  text-align: center;
+  background-color: #efefef;
+  z-index: 11;
+}
+.l-box > .form-out {
+  margin-top: 13px;
+  height: 34px;
+  border: 1px solid #cfcfcf;
+  border-radius: 17px;
+  background-color: #fff;
+}
+.l-box > .form-out > img {
+  height: 32px;
+  padding: 3px 17px;
+  vertical-align: middle;
+}
+.l-box > .form-out > input {
+  border: 0;
+  outline: none;
+  height: 32px;
+  line-height: 32px;
+  font-size: 1.3rem;
+  color: #333;
+  background-color: transparent;
+}
+.l-box > .form-out > input.ipt-code {
+  width: 90px;
+}
+.l-box > .form-out > .btn-code {
+  display: inline-block;
+  float: right;
+  padding: 0 17px;
+  height: 32px;
+  font-size: 1.3rem;
+  line-height: 32px;
+  color: #000;
+  border-left: 1px solid #cfcfcf;
+  border-radius: 17px 0 0 17px;
+}
+.l-box > .form-out > .btn-code:hover, .l-box > .form-out > .btn-code:active, .l-box > .form-out > .btn-code:focus {
+  text-decoration: none;
+}
+.l-box .btn-panel {
+  margin: 20px 0 30px;
+}
+.l-box .btn-panel .btn-danger {
+  border: 1px solid #a0141a;
+  background-color: #a0141a;
+  border-radius: 17px;
+  width: 100%;
+}
+.l-box .agree {
+  font-size: 1.2rem;
+  text-align: center;
+  color: #7e7e7e;
+}
+
+.download .logo-lg {
+  display: block;
+  margin: 15px auto;
+  width: 35%;
+}
+.download .logo-title {
+  font-size: 1.6rem;
+  font-weight: 700;
+  text-align: center;
+  color: #333;
+}
+.download .btn-panel {
+  margin: 15px 0 10px;
+}
+.download .btn-panel .btn-danger {
+  border: 1px solid #a0141a;
+  background-color: #a0141a;
+  border-radius: 17px;
+  width: 100%;
+}
+
+.download {
+  margin-bottom: 15px;
+}
+.download .d-list:before, .download .d-list:after {
+  content: " ";
+  display: table;
+}
+.download .d-list:after {
+  clear: both;
+}
+.download .d-list > li {
+  display: block;
+  float: left;
+  width: 50%;
+  min-height: 202px;
+}
+.download .d-list > li:before, .download .d-list > li:after {
+  content: " ";
+  display: table;
+}
+.download .d-list > li:after {
+  clear: both;
+}
+.download .d-list > li.left {
+  padding: 15px 20px 0 5px;
+}
+.download .d-list > li.right {
+  padding: 15px 5px 0 20px;
+}
+.download .d-list > li > img {
+  display: block;
+  margin: 0 auto;
+}
+.download .d-list > li > .title {
+  margin-top: 5px;
+  font-size: 1.6rem;
+  font-weight: 700;
+  text-align: center;
+  line-height: 3rem;
+  color: #333;
+}
+.download .d-list > li > .txt {
+  font-size: 1.3rem;
+  text-align: center;
+  line-height: 2rem;
+  color: #7e7e7e;
 }

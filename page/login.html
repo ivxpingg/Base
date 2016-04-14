@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<!---->
+<html land="zh_CN">
+<head>
+    <meta charset="utf-8">
+    <!--确保-->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<!--为了确保适当的绘制和触屏缩放，需要在 <head> 之中添加 viewport 元数据标签。
+       添加 user-scalable=no 可以禁用其缩放（zooming）功能
+	 -->
+	<meta name="viewport" content="width=device-width, initial-scale=1">   
+	<!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ --> 
+	<title>登录</title>
+	<!-- Bootstrap -->
+    <link href="../bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../dist/css/home.css">
+
+</head>
+<body>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="l-box">
+                    <div class="b-title">使用您自己的网络流量下载</div>
+                    <div class="txt">1、打开App Store,点击“搜索”按钮</div>
+                    <div class="txt">2、输入“易乘蹭”进行搜索</div>
+                    <div class="txt">3、在结果页面点击“获取”按钮下载易乘蹭</div>
+                </div>
+            </div>
+
+            <div class="col-sm-12">
+                <div class="l-box" id="forms">
+                    <div class="b-title">使用易乘蹭免费WiFi流量下载<img src="../dist/images/recommend.png" alt=""></div>
+                    <div class="txt">1、在下方输入手机号码和验证码，点击登录</div>
+                    <div class="txt">2、登录成功后自动进入</div>
+                    <div class="txt">3、在结果页面点击“获取”按钮下载易乘蹭</div>
+
+                    <div class="line"></div>
+                    <div class="line-title">登录到免费网络</div>
+
+                    <div class="form-out">
+                        <img src="../dist/images/iPhone.png" alt="">
+                        <input class="phone" id="telephone" type="text" name="telephone" title="电话号码">
+                    </div>
+                    <div class="form-out">
+                        <img src="../dist/images/locked.png" alt="">
+                        <input class="ipt-code" id="txtCode" type="text" name="txtCode"  title="验证码">
+                        <a class="btn-code" id="gcode" onclick="getCode();" name="gcode" href="#">获取验证码</a>
+                    </div>
+
+                    <div class="btn-panel">
+                        <div class="btn btn-danger" onclick="login();">登&nbsp;&nbsp;录</div>
+                    </div>
+
+                    <div class="agree">登录即表示同意<a class="red" href="#">《用户服务协议》</a></div>
+                </div>
+        </div>
+    </div>
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="../plugins/jQuery/jquery-2.1.4.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="../bootstrap/js/bootstrap.min.js"></script>
+
+    <!-- validate -->
+    <script src="../plugins/validate/validate.js"></script>
+
+    <script src="../dist/js/home.js"></script>
+
+</body>
+</html>

@@ -1,5 +1,8 @@
 @import '../common/_common';
 
+*{
+	font-family: "Microsoft yahei";
+}
 
 ul{
 	list-style-type: none;
@@ -124,3 +127,201 @@ ul{
 .orange{
 	color: #f95f39;
 }
+
+.red{
+	color: #a0141a;
+}
+
+
+
+//#region 登录页面
+
+.l-box{
+	position: relative;
+	margin-top: 35px;
+	padding: 25px 15px 15px;
+	border: 1px solid #cfcfcf;
+	background-color: #efefef;
+	border-radius: 8px;
+
+	> .b-title{
+		position: relative;
+		margin: rem(-38.5) auto rem(10);
+		padding: rem(7) 0;
+		width: 75%;
+		font-size: rem(13);
+		text-align: center;
+		color: #fff;
+		background-color: #a0141a;
+		border: 1px solid #a0141a;
+		border-radius: 8px;
+
+		> img {
+		    position: absolute;
+		    top: rem(-12.75);
+		    right: rem(-13);
+		    width: rem(25.5);
+		    height: rem(26);
+
+		}
+	}
+
+	> .txt{
+		font-size: rem(13);
+		color: #000;
+		text-align: left;
+		line-height: rem(20);
+	}
+
+	> .line{   
+		margin-top: 20px;
+        width: 100%;	    	
+        height: 1px; 
+        background-color: #a0141a;  
+	}
+
+	> .line-title{
+		margin: -10px auto 0;
+        width: rem(117);
+        font-size: rem(13);
+        color: #a0141a;
+        text-align: center;
+        background-color: #efefef;
+        z-index: 11;
+	}
+
+	> .form-out{
+      margin-top: 13px;
+      height: 34px;
+      border: 1px solid #cfcfcf;
+      border-radius: 17px;
+      background-color: #fff;
+      > img{
+      	  height: 32px;
+      	  padding: 3px 17px;
+      	  vertical-align: middle;
+      }
+
+      > input{
+      	border:0;
+      	outline: none;
+      	height: 32px;
+      	line-height: 32px;
+      	font-size: rem(13);
+      	color: #333;
+      	background-color: transparent;
+
+      	&.ipt-code{
+      		width: 90px;
+      	}
+      }
+
+      > .btn-code{
+      	display: inline-block;
+      	float: right;
+      	padding: 0 17px;
+      	height: 32px;
+      	font-size: rem(13);
+        line-height: 32px;
+        color: #000;
+        border-left: 1px solid #cfcfcf;
+        border-radius: 17px 0 0 17px;
+
+        &:hover, &:active , &:focus{
+            text-decoration:none;
+        }
+      }
+	}
+
+	.btn-panel{
+		margin: 20px 0 30px;
+
+		.btn-danger{
+			border: 1px solid #a0141a;
+            background-color: #a0141a;
+            border-radius: 17px;
+            width: 100%;
+		}
+	}
+
+	.agree{        
+		font-size: rem(12);
+		text-align: center;
+		color:#7e7e7e;
+	}
+}
+
+//#endregion \\登录页面
+
+
+//#region 下载 download.html
+
+.download{
+	.logo-lg{
+		display: block;
+		margin: 15px auto;
+		width: 35%;
+	}
+
+	.logo-title{
+		font-size: rem(16);
+		font-weight: 700;
+		text-align: center;
+		color: #333;
+	}
+
+	.btn-panel{
+		margin: 15px 0 10px;
+
+		.btn-danger{
+			border: 1px solid #a0141a;
+            background-color: #a0141a;
+            border-radius: 17px;
+            width: 100%;
+		}
+	}
+}
+
+.download{
+	margin-bottom: 15px;
+	.d-list{
+		@include clearfix();
+		> li{
+			display: block;
+			float: left;            
+			width: 50%;
+			min-height: 202px;
+			@include clearfix();            
+            
+            &.left{
+                padding: 15px 20px 0 5px;
+            }
+            &.right{
+                padding: 15px 5px 0 20px;
+            }
+
+			> img{
+				display: block;
+				margin: 0 auto;
+			}
+
+			> .title{
+				margin-top: 5px;
+				font-size: rem(16);
+				font-weight: 700;
+				text-align: center;
+				line-height: rem(30);
+				color: #333;
+			}
+
+			> .txt{
+				font-size: rem(13);
+				text-align: center;
+				line-height: rem(20);
+				color: #7e7e7e;
+			}
+		}
+	}
+}
+
+//#endregion \\.下载
