@@ -74,7 +74,7 @@ var cost3 = (function(){
 
 var cost3 = currying( cost3 );  // 转化成currying函数
 
-cost3(100);
+var d = cost3(100);
 cost3(200);
 cost3(300);
 
