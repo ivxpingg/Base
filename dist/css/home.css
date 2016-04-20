@@ -21,7 +21,7 @@ ul {
 }
 .menu > li {
   float: left;
-  width: 25%;
+  width: 20%;
 }
 .menu > li > a {
   display: block;
