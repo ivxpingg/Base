@@ -324,4 +324,10 @@ ul{
 	}
 }
 
+
+@media all and (max-width: 319px){
+	.download .d-list  > li {
+		min-height: 240px;
+	}
+}
 //#endregion \\.下载

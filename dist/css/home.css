@@ -293,3 +293,9 @@ ul {
   line-height: 2rem;
   color: #7e7e7e;
 }
+
+@media all and (max-width: 319px) {
+  .download .d-list > li {
+    min-height: 240px;
+  }
+}
