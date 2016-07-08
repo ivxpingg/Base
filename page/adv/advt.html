@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<!---->
+<html land="zh_CN">
+<head>
+    <meta charset="utf-8">
+    <!--确保-->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<!--为了确保适当的绘制和触屏缩放，需要在 <head> 之中添加 viewport 元数据标签。
+       添加 user-scalable=no 可以禁用其缩放（zooming）功能
+	 -->
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">   
+	<!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ --> 
+	<title>home</title>
+	<!-- Bootstrap -->
+    <link href="../../bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../../plugins/swiper/dist/css/swiper.min.css">
+    <style>
+         .swiper-slide img{
+         	width: 100%;
+         }
+    </style>
+
+</head>
+<body>
+    <div class="swiper-container">
+	    <div class="swiper-wrapper">
+	        <div class="swiper-slide"><img src="../../dist/images/adv/a4.png" alt=""></div>
+	        <div class="swiper-slide"><img src="../../dist/images/adv/a5.png" alt=""></div>
+	        <div class="swiper-slide"><img src="../../dist/images/adv/a6.png" alt=""></div>
+	    </div>
+	    <!-- 如果需要分页器 -->
+	    <div class="swiper-pagination"></div>
+	    
+	    <!-- 如果需要导航按钮 -->
+	    <!-- <div class="swiper-button-prev"></div>
+	    <div class="swiper-button-next"></div> -->
+	    
+	    <!-- 如果需要滚动条 -->
+	    <!-- <div class="swiper-scrollbar"></div> -->
+	</div>
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="../../plugins/jQuery/jQuery-2.1.4.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="../../plugins/swiper/dist/js/swiper.min.js"></script>
+    <script>
+    	$(document).ready(function(){
+    		     var mySwiper = new Swiper ('.swiper-container', {
+			    direction: 'horizontal',
+			    loop: false,
+			    autoplay: 3000,
+			    autoplayStopOnLast : true,
+			    // 如果需要分页器
+			    pagination: '.swiper-pagination',
+			    onSliderMove: function(swiper, event){
+			    	
+			        if(swiper.isEnd && swiper.swipeDirection == "next" ){
+                        window.location.href = "advLogin.html";
+			        }			    
+			    },
+			    onAutoplayStop: function(swiper){
+			    	if(swiper.isEnd){
+			    		window.location.href = "advLogin.html";
+			    	}
+			         
+			    }
+			    // 如果需要前进后退按钮
+			    //nextButton: '.swiper-button-next',
+			    //prevButton: '.swiper-button-prev',
+			    
+			    // 如果需要滚动条
+			   // scrollbar: '.swiper-scrollbar',
+			  });   
+    	});
+    </script>
+</body>
+</html>

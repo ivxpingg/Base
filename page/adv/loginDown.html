@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html land="zh_CN">
+<head>
+    <meta charset="utf-8">
+    <!--确保-->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!--为了确保适当的绘制和触屏缩放，需要在 <head> 之中添加 viewport 元数据标签。
+       添加 user-scalable=no 可以禁用其缩放（zooming）功能
+     -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">   
+    <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ --> 
+    <title>下载</title>
+    <!-- Bootstrap -->
+    <link href="../../bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+       * {
+            font-family: "Microsoft yahei";
+        }
+
+        .img{
+            width: 100%;
+        }
+        .m-b-30{
+            margin-bottom: 30px;
+        }
+
+        .panel{
+            margin: 15px 15px 20px; 
+            border: 1px solid #ebebeb;
+            border-radius: 7px; 
+            background-color: #f8f8f8;
+        }
+
+        .panel .title{
+            text-align: center;
+            line-height: 35px;
+            font-size: 16px;
+            color: #000;
+        }
+        .panel .content{
+            padding: 15px 10px 30px;
+            line-height: 20px;
+            font-size: 13px;
+        }
+        .panel .content .cyan{
+             color: #0093ff;
+        }
+
+        .panel .content .bmark {
+            font-size: 18px;
+            color: #ff3c00;
+        }
+
+        .panel .line{
+            height: 1px;
+            background-color: #dadada;
+        }
+        .panel .btn-panel{
+            text-align: center;
+        }
+        .panel .btn-panel .btn-link{
+            color: #ff3c00;
+            font-size: 16px;
+        }
+    </style>
+    
+</head>
+<body>
+    
+    <img class="img" src="../../dist/images/adv/adv-head.jpg" alt="">
+    <div class="panel">
+        <div class="title">您已连接到免费WIFI</div>
+        <div class="line"></div>
+        <div class="content"><span class="bmark">双豪汽车</span>提醒您：</br>下载<span class="cyan">易乘蹭APP, 一键上网, 免验证</span>内容更精彩</div>
+        <div class="line"></div>
+        <div class="btn-panel"><a class="btn btn-link" href="#">立即下载</a></div>
+
+    </div>
+    <img class="img m-b-30" src="../../dist/images/adv/adv-bottom.jpg" alt="">
+    
+    <script src="../../plugins/jQuery/jQuery-2.1.4.min.js"></script>
+    
+</body>
+</html>

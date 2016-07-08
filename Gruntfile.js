@@ -1,4 +1,4 @@
-
+//大盒子
 module.exports = function(grunt){
     'use strict';
 	
@@ -9,7 +9,9 @@ module.exports = function(grunt){
         watch: {
 	      // If any .less file changes in directory "build/less/" run the "less"-task.
 	      // files: ["build/less/*.less", "build/less/skins/*.less", "dist/js/app.js"],
-	      files: ["build/scss/pages/*.scss"],
+	      files: [	          
+	          "build/scss/**/*.scss"
+	         ],
 	      tasks: ["sass:development","autoprefixer"]
 	    },
 
@@ -27,13 +29,19 @@ module.exports = function(grunt){
 	        options: {
 	          style: 'expanded' //'compressed'
 	        },
-	        files: {'dist/css/home.css': 'build/scss/pages/home.scss'}
+	        files: { 
+	        	'dist/css/home.css': 'build/scss/pages/home.scss',
+                'dist/css/adv/adv.css': 'build/scss/pages/adv/adv.scss'
+	        }
 	      },
 	      production: {
 	        options: {
 	          style: 'compressed'
 	        },
-	        files: {'dist/css/home.css': 'build/scss/pages/home.scss'}
+	        files: {
+	        	'dist/css/home.css': 'build/scss/pages/home.scss',
+	        	'dist/css/adv/adv.css': 'build/scss/pages/adv/adv.scss'
+	        }
 	      }
 	    },
 
@@ -41,7 +49,8 @@ module.exports = function(grunt){
 	    autoprefixer: {
 	    	dist: {
 	    		files: {
-	    			'dist/css/home.css': 'dist/css/home.css'
+	    			'dist/css/home.css': 'dist/css/home.css',
+	    			'dist/css/adv/adv.css': 'dist/css/adv/adv.css'
 	    		}
 	    	}
 	    }

@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html land="zh_CN">
+<head>
+    <meta charset="utf-8">
+    <!--确保-->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!--为了确保适当的绘制和触屏缩放，需要在 <head> 之中添加 viewport 元数据标签。
+       添加 user-scalable=no 可以禁用其缩放（zooming）功能
+     -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">   
+    <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ --> 
+    <title>登陆</title>
+    <!-- Bootstrap -->
+    <link href="../../bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        * {
+            font-family: "Microsoft yahei";
+        }
+
+        .img{
+            width: 100%;
+        }
+
+        .btn{
+            display: block;
+            margin: 20px 15px 30px;
+        }
+
+        .btn > img {
+            display: block;
+        }
+
+        .m-b-30{
+            margin-bottom: 30px;
+        }
+
+        .login-panel{
+            margin: 15px 15px 20px;
+            padding: 25px 10px 20px; 
+            border: 1px solid #ebebeb;
+            border-radius: 7px; 
+            background-color: #f8f8f8;
+        }
+        .login-panel > .line{
+            height: 1px;
+            width: 100%;
+            text-align:center;
+            background-color: #a63135;            
+        }
+
+        .login-panel > .title{
+            display: block;
+            margin: -12px auto 0;
+            padding: 0 12px;
+            width: 130px;
+            text-align: center;            
+            font-size: 16px;
+            color: #a63135;
+            background-color: #f8f8f8;
+        }
+
+        .form-out {
+          margin-top: 13px;
+          height: 34px;
+          border: 1px solid #cfcfcf;
+          border-radius: 17px;
+          background-color: #fff;
+        }
+        .form-out > img {
+          height: 32px;
+          padding: 3px 17px;
+          vertical-align: middle;
+        }
+        .form-out > input {
+          border: 0;
+          outline: none;
+          height: 32px;
+          padding: 10px 0;
+          font-size: 1.3rem;
+          color: #333;
+          background-color: transparent;
+        }
+        .form-out > input.ipt-code {
+          width: 70px;
+        }
+        .form-out > .btn-code {
+          display: inline-block;
+          float: right;
+          padding: 0 17px;
+          height: 32px;
+          font-size: 1.3rem;
+          line-height: 32px;
+          color: #000;
+          border-left: 1px solid #cfcfcf;
+          border-radius: 17px 0 0 17px;
+        }
+        .form-out > .btn-code:hover, .form-out > .btn-code:active, .form-out > .btn-code:focus {
+          text-decoration: none;
+        }
+
+        .btn-panel {
+          margin: 20px 0 30px;
+        }
+        .btn-panel .btn-danger {
+          margin: 20px 0 30px;
+          border: 1px solid #a0141a;
+          background-color: #a0141a;
+          border-radius: 17px;
+          width: 100%;
+        }
+        .agree {
+          font-size: 1.2rem;
+          text-align: center;
+          color: #7e7e7e;
+        }
+
+        .red {
+            color: #a0141a;
+        }
+    </style>
+
+</head>
+<body>
+
+    <img class="img" src="../../dist/images/adv/adv-head.jpg" alt="">
+    <div class="login-panel">
+        <div class="line"></div>     
+        <div class="title">免费上网验证</div>   
+        <div class="form-panel" id="forms">
+            <div class="form-out">
+                <img src="../../dist/images/iPhone.png" alt="">
+                <input class="phone" id="telephone" type="text" name="telephone" placeholder="电话号码" title="电话号码">
+            </div>
+            <div class="form-out">
+                <img src="../../dist/images/locked.png" alt="">
+                <input class="ipt-code" id="txtCode" type="text" name="txtCode"  placeholder="验证码" title="验证码">
+                <a class="btn-code" id="gcode" onclick="getCode();" name="gcode" href="#">获取验证码</a>
+            </div>
+
+            <div class="btn-panel">
+                <div class="btn btn-danger" onclick="login();">登&nbsp;&nbsp;录</div>
+            </div>
+
+            <div class="agree">登录即表示同意<a class="red" href="#">《用户服务协议》</a></div>
+        </div>
+    </div>
+    <img class="img m-b-30" src="../../dist/images/adv/adv-bottom.jpg" alt="">
+    
+    <script src="../../plugins/jQuery/jQuery-2.1.4.min.js"></script>
+    <!-- validate -->
+    <script src="../../plugins/validate/validate.js"></script>
+    <script>
+        
+        //登录
+
+        //手机号码验证
+        function loginValidate(){
+            var constraints = {
+                telephone: {
+                    presence: true,
+                    telephone: {
+                        message: "^请输入正确电话号码"
+                    }
+                }
+            };
+            var attribute = document.querySelector("#forms");
+            var errors = validate(attribute, constraints);
+            
+            for (var attr in errors) {
+                alert(errors[attr]);
+                return false;
+            }
+            return true;
+        };
+
+        //验证验证码
+        function codeValidate(){
+            var constraints = {
+                txtCode: {
+                    presence: true
+                }
+            };
+            var attribute = document.querySelector("#forms");
+            var errors = validate(attribute, constraints);
+            
+            for (var attr in errors) {
+                alert(errors[attr]);
+                return false;
+            }
+            return true;
+        };
+
+        //验证码倒计时
+        function timing (seconds){
+
+            var dom = document.getElementById("gcode");
+            var slass = dom.className;
+            
+            if(dom.className.indexOf('active') > 0) return;
+
+            dom.className = slass + " active";
+
+            dom.innerHTML = seconds + '秒后重新获取';
+            var t = setInterval(function(){       
+                if(seconds > 0){
+                    --seconds;
+                     dom.innerHTML = seconds + '秒后重新获取';            
+                }
+                else {              
+                    dom.innerHTML = '获取验证码';
+                    dom.className = dom.className.replace('active', '');
+                    clearInterval(t);
+                }
+           }, 1000);
+        };
+
+        //获取验证码
+        function getCode(){
+            
+            if(loginValidate()){
+                console.log('获取验证码'); //后台交互，获取验证码
+                timing(60);
+            }
+
+        };
+
+        //登录
+        function login(){
+            if(loginValidate() && codeValidate()){
+                console.log('登录');  //登录成功后跳转
+                window.location.href = "loginDown.html";
+            }
+        };
+
+    </script>
+    
+</body>
+</html>
