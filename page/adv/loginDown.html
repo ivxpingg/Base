@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html land="zh_CN">
+
 <head>
     <meta charset="utf-8">
     <!--确保-->
@@ -7,43 +8,52 @@
     <!--为了确保适当的绘制和触屏缩放，需要在 <head> 之中添加 viewport 元数据标签。
        添加 user-scalable=no 可以禁用其缩放（zooming）功能
      -->
-    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">   
-    <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ --> 
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
     <title>下载</title>
     <!-- Bootstrap -->
     <link href="../../bootstrap/css/bootstrap.min.css" rel="stylesheet">
     <style>
-       * {
+        * {
             font-family: "Microsoft yahei";
         }
 
-        .img{
-            width: 100%;
-        }
-        .m-b-30{
-            margin-bottom: 30px;
+        html {
+            height: 100%;
         }
 
-        .panel{
-            margin: 15px 15px 20px; 
+        body {
+            height: 100%;
+        }
+
+        .img {
+            width: 100%;
+        }
+
+        .m-b-30 {}
+
+        .panel {
+            margin: 15px 15px 20px;
             border: 1px solid #ebebeb;
-            border-radius: 7px; 
+            border-radius: 7px;
             background-color: #f8f8f8;
         }
 
-        .panel .title{
+        .panel .title {
             text-align: center;
             line-height: 35px;
             font-size: 16px;
             color: #000;
         }
-        .panel .content{
+
+        .panel .content {
             padding: 15px 10px 30px;
             line-height: 20px;
             font-size: 13px;
         }
-        .panel .content .cyan{
-             color: #0093ff;
+
+        .panel .content .cyan {
+            color: #0093ff;
         }
 
         .panel .content .bmark {
@@ -51,24 +61,27 @@
             color: #ff3c00;
         }
 
-        .panel .line{
+        .panel .line {
             height: 1px;
             background-color: #dadada;
         }
-        .panel .btn-panel{
+
+        .panel .btn-panel {
             text-align: center;
         }
-        .panel .btn-panel .btn-link{
+
+        .panel .btn-panel .btn-link {
             color: #ff3c00;
             font-size: 16px;
         }
     </style>
-    
+
 </head>
+
 <body>
-    
-    <img class="img" src="../../dist/images/adv/adv-head.jpg" alt="">
-    <div class="panel">
+
+    <img class="img" id="imgTop" src="../../dist/images/adv/adv-head.jpg" alt="">
+    <div class="panel" id="btn">
         <div class="title">您已连接到免费WIFI</div>
         <div class="line"></div>
         <div class="content"><span class="bmark">双豪汽车</span>提醒您：</br>下载<span class="cyan">易乘蹭APP, 一键上网, 免验证</span>内容更精彩</div>
@@ -76,9 +89,55 @@
         <div class="btn-panel"><a class="btn btn-link" href="#">立即下载</a></div>
 
     </div>
-    <img class="img m-b-30" src="../../dist/images/adv/adv-bottom.jpg" alt="">
-    
+    <img class="img m-b-30" id="imgBottom" src="../../dist/images/adv/adv-bottom.jpg" alt="">
+
     <script src="../../plugins/jQuery/jQuery-2.1.4.min.js"></script>
-    
+    <script type="text/javascript">
+        $(document).ready(function() {
+            var domBody = $('body'),
+                domImgtop = $('#imgTop'),
+                domA = $('#btn'),
+                domImgbottom = $('#imgBottom');
+            var bodyHeight = domBody.height(),
+                imgTopHeight = domImgtop.height(),
+                btnHeight = domA.outerHeight(),
+                imgBottomHeight = domImgbottom.height();
+
+            var fn = function() {
+                if (bodyHeight > (imgTopHeight + imgBottomHeight + btnHeight + 35)) {
+                    domImgbottom.css({
+                        'position': 'absolute',
+                        'bottom': 0,
+                        'left': 0
+                    });
+                    var mar = (bodyHeight - imgTopHeight - imgBottomHeight - btnHeight) / 2;
+                    domA.css({
+                        'margin-top': mar,
+                        'margin-bottom': mar
+                    });
+                    domBody.css({
+                        'height': 'auto'
+                    })
+                } else {
+                    console.log(false);
+                }
+            }
+
+            var time = setInterval(function() {
+                if (imgTopHeight == 0) {
+                    imgTopHeight = domImgtop.height();
+                    return;
+                }
+                if (imgBottomHeight == 0) {
+                    imgBottomHeight = domImgbottom.height();
+                    return;
+                }
+                clearInterval(time);
+                fn();
+            }, 100);
+
+        });
+    </script>
 </body>
+
 </html>

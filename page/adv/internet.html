@@ -1,42 +1,110 @@
 <!DOCTYPE html>
 <html land="zh_CN">
+
 <head>
     <meta charset="utf-8">
     <!--确保-->
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<!--为了确保适当的绘制和触屏缩放，需要在 <head> 之中添加 viewport 元数据标签。
+    <!--为了确保适当的绘制和触屏缩放，需要在 <head> 之中添加 viewport 元数据标签。
        添加 user-scalable=no 可以禁用其缩放（zooming）功能
 	 -->
-	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">   
-	<!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ --> 
-	<title>点我上网</title>
-	<!-- Bootstrap -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+    <title>点我上网</title>
+    <!-- Bootstrap -->
     <link href="../../bootstrap/css/bootstrap.min.css" rel="stylesheet">
     <style>
-        img{
-        	width: 100%;
+        html,
+        body {
+            height: 100%;
         }
 
-        .btn{
-        	display: block;
-        	margin: 40px 15px 50px;
+        a {
+            display: block;
         }
 
-        .btn > img {
-        	display: block;
+        img {
+            width: 100%;
         }
 
-        .m-b-30{
-        	margin-bottom: 30px;
+        .btn {
+            display: block;
+            margin: 40px 15px 50px;
         }
+
+        .btn> img {
+            display: block;
+        }
+
+        .m-b-30 {}
     </style>
 
 </head>
-<body>
-    <img src="../../dist/images/adv/adv-head.jpg" alt="">
-    <a class="btn" href="advt.html"><img src="../../dist/images/adv/adv-btn.png" alt=""></a>
-    <img class="m-b-30" src="../../dist/images/adv/adv-bottom.jpg" alt="">
 
-    
+<body>
+    <img id="imgTop" src="../../dist/images/adv/adv-head.jpg" alt="">
+    <a class="btn" href="advt.html"><img id="btn" src="../../dist/images/adv/adv-btn.png" alt=""></a>
+    <div><img class="m-b-30" id="imgBottom" src="../../dist/images/adv/adv-bottom.jpg" alt=""></div>
+
 </body>
+
+<script type="text/javascript" src="../../plugins/jQuery/jquery-1.12.0.js"></script>
+<script type="text/javascript">
+    $(document).ready(function() {
+        var
+            domHtml = $('html'),
+            domBody = $('body'),
+            domImgtop = $('#imgTop'),
+            domA = $('#btn'),
+            domImgbottom = $('#imgBottom');
+        var bodyHeight = domHtml.height(),
+            imgTopHeight = domImgtop.height(),
+            btnHeight = domA.outerHeight(),
+            imgBottomHeight = domImgbottom.height();
+
+
+        //domBody.css('height', domHtml.height());
+        // var ua = navigator.userAgent.toLowerCase();
+        // if (/iphone|ipad|ipod/.test(ua)) {
+        //     domBody.css({
+        //         'height': '100%'
+        //     });
+        // } else if (/android/.test(ua)) {
+        //     domBody.css({
+        //         'height': 'auto',
+        //         'min-height': '100%'
+        //     });
+        // }
+
+        var fn = function() {
+
+            console.log(bodyHeight, imgTopHeight, imgBottomHeight, btnHeight);
+            if (bodyHeight > (imgTopHeight + imgBottomHeight + btnHeight + 40)) {
+
+                var mar = (bodyHeight - imgTopHeight - imgBottomHeight - btnHeight) / 2;
+                domA.parent().css({
+                    'margin-top': mar,
+                    'margin-bottom': mar
+                });
+            } else {
+                console.log(false);
+            }
+        }
+
+        var time = setInterval(function() {
+            if (imgTopHeight == 0) {
+                imgTopHeight = domImgtop.height();
+                return;
+            }
+            if (imgBottomHeight == 0) {
+                imgBottomHeight = domImgbottom.height();
+                return;
+            }
+            clearInterval(time);
+            fn();
+        }, 100);
+
+    });
+</script>
+
 </html>
