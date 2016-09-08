@@ -1,0 +1,255 @@
+input[type="text"] {
+    margin: 4px 0;
+    height: 22px;
+    background-color: transparent;
+    border: 0;
+    outline: 0;
+    vertical-align: middle;
+}
+
+input[type="checkbox"],input[type="radio"]  {
+    width: 16px;
+    height: 16px;
+    vertical-align: middle;
+}
+
+textarea{
+    background-color: transparent;
+    border: 0;
+    outline: 0;
+}
+
+select {
+    margin: 4px 0;
+    height: 22px;
+    background-color: transparent;
+    border: 0;
+    outline: 0;
+    vertical-align: middle;
+}
+
+
+.i-text {
+    position: relative;
+    margin: 0 10px;
+    //height: 45px;
+    line-height: 45px;
+
+    > .title {
+        display: inline-block;
+        font-size: 14px;
+    }
+    > .text {
+        display: inline-block;
+        color: #8d8d8d;
+        font-size: 14px;
+    }
+    > .slogan {
+        float: right;
+        display: inline-block;
+        margin-right: 30px;
+        color: #8d8d8d;
+        font-size: 14px;
+    }
+
+    > .ic {
+        position: absolute;
+        top: 36%;
+        right: 5px;
+        width: 16px;
+        height: 15px;
+        background: url("../images/card_control.png") 0 -80px no-repeat;
+    }
+}
+
+/**
+ * phone图片logo
+ */
+.phone-logo-box {
+    position: relative;
+    padding-top: 12px;
+    height: 121px;
+    overflow: hidden;
+    .img-panel {
+        width: 100%;
+    }
+
+    .logo-summary {
+        position: absolute;
+        display: block;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 24px;
+        color: #fff;
+        background: rgba(0,0,0,0.7);
+        z-index: 100;
+        .title {
+            float: left;
+            padding-left: 14px;
+            height: 24px;
+            line-height: 24px;
+        }
+        > .ic {
+            position: absolute;
+            top: 20%;
+            right: 5px;
+            width: 16px;
+            height: 15px;
+            background: url("../images/card_control.png") 0 -80px no-repeat;
+        }
+    }
+
+}
+
+.control-group {
+    margin-top: 30px;
+    margin-bottom: 30px;
+    padding-bottom: 0;
+    .control {
+        @include clearfix();
+        .label {
+            float: left;
+            margin: 4px 0;
+            width: 98px;
+            line-height: 22px;
+        }
+
+        .controls {
+            padding-left: 98px;
+            .input-submsg {
+                margin-bottom: 12px;
+                .input-box, .select-box {
+                    position: relative;
+                    display: inline-block;
+                    height: auto;
+                    line-height: 30px;
+                    font-size: 14px;
+                    padding: 0 10px;
+                    border: 1px solid #e7e7eb;
+                    background-color: #fff;
+                }
+
+                .select-box {
+                    padding: 0 5px 0 10px;
+
+                }
+                .time-box {
+                    display: inline-block;
+                    @include clearfix();
+                    .ta_date {
+                        display: inline-block;
+                        float: none;
+                    }
+                }
+
+                @at-root .sel-box {
+                    position: relative;
+                    display: inline-block;
+                    border: 1px solid #dadbe0;
+                    background-color: #fff;
+                    font-size: 0;
+                    .sel-color {
+                         display: inline-block;
+                         height: 30px;
+                         width: 116px;
+                         cursor: pointer;
+
+                         .color-chunk {
+                             margin: 4px 5px;
+                             display: inline-block;
+                             width: 22px;
+                             height: 22px;
+                             background: transparent;
+                         }
+
+                         .arrow {
+                             position: absolute;
+                             right: 10px;
+                             top: 50%;
+                             margin-top: -2.5px;
+                             display: inline-block;
+                             width: 0;
+                             height: 0;
+                             border-width: 5px;
+                             border-style: dashed;
+                             border-color: transparent;
+                             border-bottom-width: 0;
+                             border-top-color: #c6c6c6;
+                             border-top-style: solid;
+                         }
+
+                         &:hover {
+                             background-color: #e7e7eb;
+
+                             .arrow {
+                                 border-top-color: #a0a0a0;
+                             }
+                         }
+
+
+                    }
+
+                    ul.color-list {
+                        display: none;
+                        position: absolute;
+                        top: 100%;
+                        left: -1px;
+                        padding: 5px 0 5px 5px;
+                        margin: 0;
+                        width: 135px;
+                        background-color: #FFF;
+                        z-index: 99;
+                        border: 1px solid #dadbe0;
+
+                        li {
+                            margin: 0 5px 5px 0;
+                            float: left;
+                            width: 22px;
+                            height: 22px;
+                            cursor: pointer;
+                        }
+                    }
+                }
+
+                .radio-box {
+                    position: relative;
+                    display: inline-block;
+                    height: auto;
+                    line-height: 30px;
+                    font-size: 14px;
+                    padding: 0 10px;
+                    border: 0;
+                    background-color: transparent;;
+                }
+            }
+
+            .img-submsg {
+                margin-bottom: 12px;
+                .logo-img {
+                    display: inline-block;
+                    margin-right: 14px;
+                    width: 80px;
+                    height: 80px;
+                }
+                .brand_name{
+                    vertical-align: top;
+                }
+            }
+
+            .radio-control-group {
+
+            }
+        }
+
+        .tips {
+            padding-top: 4px;
+            width: auto;
+            color: #8d8d8d;
+
+            &.fail {
+                color: #e15f63;
+            }
+        }
+    }
+}

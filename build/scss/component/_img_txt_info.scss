@@ -1,0 +1,211 @@
+/**
+ * 图文信息的组件
+ */
+.card-article-box {
+    padding: 0;
+    position: relative;
+    width: 396px;
+    border: 1px solid #d9dadc;
+    background-color: #fff;
+    .js-card-article-preview {
+
+        @at-root .card-article-toolbar {
+            position: absolute;
+            display: none;
+            left: 0;
+            bottom: -32px;
+            height: 32px;
+            line-height: 32px;
+            padding: 0 10px;
+            z-index: 2;
+            background-color: rgba(0,0,0,0.75);
+
+            .editor-item {
+                display: inline-block;
+                margin: 0 5px;
+                font-size: 20px;
+                vertical-align: top;
+                width: 25px;
+                cursor: pointer;
+
+                .icon-card-arrowup {
+                    width: 13px;
+                    height: 20px;
+                    vertical-align: middle;
+                    display: inline-block;
+                    overflow: hidden;
+                    background: url("../images/card_control.png") 0 -3569px no-repeat;
+                }
+                .icon-card-arrowdown {
+                    width: 13px;
+                    height: 20px;
+                    vertical-align: middle;
+                    display: inline-block;
+                    overflow: hidden;
+                    background: url("../images/card_control.png") 0 -3599px no-repeat;
+                }
+                .icon16-common {
+                    width: 16px;
+                    height: 16px;
+                    vertical-align: middle;
+                    display: inline-block;
+                    overflow: hidden;
+                    background: url("../images/card_control.png") 0 -758px no-repeat;
+                }
+                .icon-card-delete {
+                    width: 15px;
+                    height: 20px;
+                    vertical-align: middle;
+                    display: inline-block;
+                    overflow: hidden;
+                    background: url("../images/card_control.png") 0 -3629px no-repeat;
+                }
+            }
+
+
+        }
+
+        .js-ca-preview {
+            padding: 10px;
+            width: auto;
+            height: auto;
+            overflow: hidden;
+
+            > img {
+                width: 100%;
+                display: block;
+            }
+            .ca-preview-txt {
+                background-color: #f6f6f8;
+                padding: 10px;
+                max-height: 6em;
+                height: auto;
+                overflow-y: auto;
+            }
+        }
+    }
+
+    .js-card-article-editor {
+        .js-article-item {
+            .card-article-img {
+                margin: 10px;
+                padding: 0;
+                text-align: center;
+                position: relative;
+                z-index: 0;
+                min-height: 60px;
+                background-color: #f4f5f9;
+
+                .btn-card-image {
+                    position: absolute;
+                    top: 20%;
+                    left: 45%;
+                    z-index: 1000;
+                    background: url("../images/card_control.png") 0 -3369px no-repeat;
+                    width: 38px;
+                    height: 38px;
+                    vertical-align: middle;
+                    display: inline-block;
+                    z-index: 10000;
+                }
+
+                .mask {
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 100%;
+                    opacity: .75;
+                    background-color: #000;
+                    z-index: 9998;
+                }
+            }
+
+            .card-article-description {
+                margin: 10px;
+                position: relative;
+
+                @at-root .frm-textarea-box {
+                    display: block;
+                    width: 100%;
+                    box-sizing: border-box;
+                    padding: 4px 0 24px 10px;
+                    font-size: 14px;
+                    border: 1px solid #e7e7eb;
+                    border-color: #e7e7eb;
+                    box-shadow: none;
+                    background-color: #fff;
+
+                    .frm-textarea {
+                        height: 100px;
+                        width: 100%;
+                        background-color: transparent;
+                        border: 0;
+                        outline: 0;
+                        resize: none;
+                        font-family: inherit;
+                    }
+                }
+                .frm-textarea-append {
+                    position: absolute;
+                    right: 10px;
+                    bottom: 0;
+                    color: #8d8d8d;
+                    font-size: 14px;
+                    font-weight: 400;
+                    font-style: normal;
+                }
+
+            }
+
+            .card-article-opr {
+                text-align: right;
+                margin: 10px;
+                .btn-primary {
+                    margin-right: 1em;
+                }
+            }
+        }
+
+    }
+
+    .js-card-article-add {
+        display: block;
+        padding: 10px;
+        height: 52px;
+
+
+        .icon-article-add {
+            display: block;
+            height: 100%;
+            text-align: center;
+            border: 1px dashed #d9dadc;
+            cursor: pointer;
+            .incon-add{
+                display: inline-block;
+                vertical-align: middle;
+                margin: 5px auto;
+                width: 42px;
+                height: 42px;
+                background: url("../images/card_control.png") 0 -3465px no-repeat;
+
+                &:hover {
+                    background: url("../images/card_control.png") 0 -3517px no-repeat;
+                }
+            }
+
+            &.editting {
+                background-color: #f3f3f3;
+                cursor: default;
+                .incon-add {
+                    &:hover {
+                        background: url("../images/card_control.png") 0 -3465px no-repeat;
+                    }
+
+                }
+            }
+        }
+
+
+    }
+}

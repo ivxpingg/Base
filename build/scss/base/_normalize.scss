@@ -1,0 +1,54 @@
+/*========== reset ==========*/
+
+html, body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, form, fieldset, input, textarea, p, blockquote, th, td, iframe,hr{
+    margin:0;
+    padding:0;
+}
+html{
+    position: relative;
+    height: auto;
+}
+
+body{
+    font:14px/1.6 "Helvetica Neue","Hiragino Sans GB","Microsoft YaHei";
+    *font-family:"Helvetica Neue","Hiragino Sans GB","Microsoft YaHei";
+    color: #222;
+}
+fieldset, img {
+    border:0;
+}
+address, caption, cite, dfn, em, th, var{
+    font-style:normal;
+    font-weight:normal;
+}
+ol, ul { list-style:none; }
+caption, th { text-align:left; }
+h1, h2, h3, h4, h5, h6 { font-size:100%; }
+table {border-collapse:collapse;border-spacing:0;}
+select,input,label,button,textarea{
+    margin:0;
+    padding:0;
+    font:normal normal normal inherit;
+    font-family: "Helvetica Neue","Hiragino Sans GB","Microsoft YaHei";
+    overflow:visible;
+}
+// input{
+//     padding:2px 0 1px;
+//     *padding:4px 0 0;
+//     _padding:4px 0 0;
+//     _height:21px;
+// }
+
+a {
+    color: #459ae9;
+    text-decoration: none;
+    outline: 0;
+    &:hover, &:focus {
+        color: darken(#459ae9, 15%);
+        text-decoration: underline;
+    }
+}
+
+p {
+
+}

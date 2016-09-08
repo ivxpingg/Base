@@ -1,16 +1,16 @@
 
 module.exports = function(grunt){
     'use strict';
-	
+
 	grunt.initConfig({
 		pkg: grunt.file.readJSON('package.json'),
 		banner: '',
-        
+
         watch: {
 	      // If any .less file changes in directory "build/less/" run the "less"-task.
 	      // files: ["build/less/*.less", "build/less/skins/*.less", "dist/js/app.js"],
-	      files: ["build/scss/*.scss", "build/scss/skins/*.scss", "dist/js/app.js"],
-	      tasks: ["sass", "uglify"]
+	      files: ["build/scss/*.scss", "build/scss/**/*.scss"],
+	      tasks: ["sass", "autoprefixer"]
 	    },
 
         // SASS compiler
@@ -20,7 +20,7 @@ module.exports = function(grunt){
 	          style: 'expanded'
 	        },
 	        files: {
-	          'bootstrap/css/bootstrap.css': 'bootstrap/scss/bootstrap.scss'
+	          'dist/css/all.css': 'build/scss/all.scss'
 	        }
 	      },
 	      production: {
@@ -28,7 +28,7 @@ module.exports = function(grunt){
 	          style: 'compressed'
 	        },
 	        files: {
-	          'bootstrap/css/bootstrap.min.css': 'bootstrap/scss/bootstrap.scss'
+	          'dist/css/all.min.css': 'build/scss/all.scss'
 	        }
 	      }
 	    },
@@ -46,8 +46,8 @@ module.exports = function(grunt){
 
 
 	    //合并文件
-	    concat: {	   
-	    	bootstraps: { 
+	    concat: {
+	    	bootstraps: {
 
 	    		options: {
 	    			banner: '/* bootstrap */',
@@ -84,7 +84,8 @@ module.exports = function(grunt){
 	    autoprefixer: {
 	    	dist: {
 	    		files: {
-	    			'test/css/auto.css': 'test/css/autoprefixer.css'
+	    			'dist/css/all.css': 'dist/css/all.css',
+                    'dist/css/all.min.css': 'dist/css/all.min.css',
 	    		}
 	    	}
 	    }
@@ -100,6 +101,6 @@ module.exports = function(grunt){
     grunt.loadNpmTasks('grunt-autoprefixer');     //css自动添加浏览器前缀(后处理程序)
 
     //
-    grunt.registerTask('default',['autoprefixer']); 
+    grunt.registerTask('default',['watch']);
     grunt.registerTask('bootstrap', ['concat','uglify']);
 };

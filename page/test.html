@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    	<!--为了确保适当的绘制和触屏缩放，需要在 <head> 之中添加 viewport 元数据标签。
+           添加 user-scalable=no 可以禁用其缩放（zooming）功能
+    	 -->
+    	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    	<!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+        <title>test</title>
+        <link rel="stylesheet" href="../dist/css/all.min.css">
+    </head>
+    <body>
+          <div class="card-article-box">
+              <div class="js-card-article-preview">
+                  <div class="card-article-toolbar js-article-toolbar" style="display: none; top: 144.141px; left: 111px; z-index: 1;">
+                      <a class="editor-item js-moveup"><i class="icon-card-arrowup"></i></a>
+                      <a class="editor-item js-movedown"><i class="icon-card-arrowdown"></i></a>
+                      <!-- <a class="editor-item js-edit"><i class="icon16-common edit-gray"></i></a> -->
+                      <a class="editor-item js-delete"><i class="icon-card-delete"></i></a>
+                  </div>
+                  <div class="js-card-article-previews">
+
+                  </div>
+
+              </div>
+              <div class="js-card-article-editor">
+
+              </div>
+              <div class="js-card-article-add ">
+                  <span class="icon-article-add js-artical-add">
+                      <span class="incon-add"></span>
+                  </span>
+              </div>
+          </div>
+
+          <div class="dialog-wp">
+              <div class="dialog">
+                   <div class="dialog-hd">
+                       <h3>选择图片</h3>
+                       <a class="icon16_opr closed pop_closed" href="javascript:;"></a>
+                   </div>
+                   <div class="dialog-bd">
+                       <div class="inner-main">
+                           <div class="upload">
+                               <div class="" id="upload_logo_dialog">
+
+                               </div>
+                           </div>
+                           <div class="img-list-box">
+                               <ul>
+                                   <li>
+                                      <div class="pic-box">
+                                          <img src="https://mmbiz.qlogo.cn/mmbiz/cEdDrYOU87NojjTdkicfCyliaQNSG6nbpuDWNGLgAD4WvzHbRP0Ja83nXIny5lBS9CtQ1u6h4s7RcNq7OxszX7icQ/0?wx_fmt=png" alt="" />
+                                      </div>
+                                      <div class="lbl-content">
+                                             4455
+                                      </div>
+                                      <div class="mask">
+                                          <span class="icon-sle"></span>
+                                      </div>
+                                   </li>
+                               </ul>
+                               <div class="pages">
+
+                               </div>
+                           </div>
+                       </div>
+                   </div>
+                   <div class="dialog-ft">
+                        <span class="btn btn-primary">确定</span>
+                        <span class="btn btn-default">取消</span>
+                   </div>
+              </div>
+          </div>
+    </body>
+    <script type="text/javascript" src="../plugins/jQuery/jquery-1.12.0.min.js"> </script>
+    <script type="text/javascript" src="../plugins/zyUpload/zyFile.js"> </script>
+    <script type="text/javascript" src="../plugins/zyUpload/zyUpload.js"> </script>
+    <script type="text/javascript" src="../dist/js/dialogImg.js"></script>
+    <script type="text/javascript" src="../dist/js/img_txt_info.js"></script>
+
+    <script type="text/javascript">
+    // 初始化插件
+    $("#upload_logo_dialog").zyUpload({
+        width            :   "400px",                 // 宽度
+        height           :   'auto',                 // 宽度
+        itemWidth        :   "120px",                 // 文件项的宽度
+        itemHeight       :   "100px",                 // 文件项的高度
+        url              :   "/upload/UploadAction",  // 上传文件的路径
+        multiple         :   false,                    // 是否可以多个文件上传
+        dragDrop         :   false,                    // 是否可以拖动上传文件
+        del              :   true,                    // 是否可以删除文件
+        finishDel        :   false,  				  // 是否在上传文件完成后删除预览
+        /* 外部获得的回调接口 */
+        onSelect: function(files, allFiles){                    // 选择文件的回调方法
+            // console.info("当前选择了以下文件：");
+            // console.info(files);
+            // console.info("之前没上传的文件：");
+            // console.info(allFiles);
+        },
+        onDelete: function(file, surplusFiles){                     // 删除一个文件的回调方法
+            // console.info("当前删除了此文件：");
+            // console.info(file);
+            // console.info("当前剩余的文件：");
+            // console.info(surplusFiles);
+        },
+        onSuccess: function(file){                    // 文件上传成功的回调方法
+            // console.info("此文件上传成功：");
+            // console.info(file);
+        },
+        onFailure: function(file){                    // 文件上传失败的回调方法
+            // console.info("此文件上传失败：");
+            // console.info(file);
+        },
+        onComplete: function(responseInfo){           // 上传完成的回调方法
+            // console.info("文件上传完成");
+            // console.info(responseInfo);
+
+
+            //$('#js_phone_logo_img').attr('src', '');
+            ////$('#js_phone_logo_box').show();
+        }
+    });
+    </script>
+</html>
